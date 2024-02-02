@@ -18,10 +18,10 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   return (
     <label style={{ color: disabled ? 'gray' : 'black', ...style }}>
       <input
-        type='checkbox'
         checked={checked}
-        onChange={onChange}
         disabled={disabled}
+        onChange={onChange}
+        type='checkbox'
       />
       {label}
     </label>

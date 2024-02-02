@@ -37,8 +37,10 @@ export const RadioButtonGroupStory = () => {
   return (
     <RadioButtonGroup
       name='group1'
-      value={value}
-      onChange={e => setValue(e.target.value)}>
+      onChange={e => {
+        setValue(e.target.value)
+      }}
+      value={value}>
       <RadioButton checked label='Option 1' value='option1' />
       <RadioButton label='Option 2' value='option2' />
       <RadioButton checked label='Option 3' value='option3' />
