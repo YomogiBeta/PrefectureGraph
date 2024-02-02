@@ -31,12 +31,12 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   return (
     <label style={{ color: disabled ? 'gray' : 'black', ...style }}>
       <input
+        checked={contextValue !== undefined ? contextValue === value : checked}
+        disabled={disabled}
         name={contextName ?? name}
+        onChange={handleChange}
         type='radio'
         value={value}
-        checked={contextValue !== undefined ? contextValue === value : checked}
-        onChange={handleChange}
-        disabled={disabled}
       />
       {label}
     </label>
