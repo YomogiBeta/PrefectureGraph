@@ -1,7 +1,7 @@
 import React from 'react'
 import type { StoryObj } from '@storybook/react'
 import RadioButton from './RadioButton'
-import RadioButtonGroup from './RadioGroup/index'
+import RadioButtonGroup from './RadioButtonGroup'
 
 export default {
   title: 'Components/Radio/RadioButton',
