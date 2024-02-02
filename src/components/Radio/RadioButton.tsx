@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import useRadioGroup from './RadioGroup/useRadioGroup'
+import useRadioGroup from './RadioButtonGroup/useRadioGroup'
 
 type RadioButtonProps = {
   name?: string
