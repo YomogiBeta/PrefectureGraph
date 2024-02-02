@@ -31,7 +31,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   return (
     <label style={{ color: disabled ? 'gray' : 'black', ...style }}>
       <input
-        name={name ?? contextName}
+        name={contextName ?? name}
         type='radio'
         value={value}
         checked={contextValue !== undefined ? contextValue === value : checked}
