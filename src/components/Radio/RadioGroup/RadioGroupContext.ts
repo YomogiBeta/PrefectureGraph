@@ -1,12 +1,12 @@
 import { createContext } from 'react'
 
 type RadioGroupContextType = {
-  name: string
+  name: string | undefined
 		value?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 const RadioGroupContext = createContext<RadioGroupContextType>({
-  name: '',
+  name: undefined,
 		value: undefined,
 		onChange: () => {},
 })
