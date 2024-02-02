@@ -1,4 +1,35 @@
+# dependencies
 node_modules/
 .cache/
 public
 src/gatsby-types.d.ts
+
+# testing
+/coverage
+
+# production
+/build
+/public
+/.cache
+src/gatsby-types.d.ts
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# env
+.env.*
