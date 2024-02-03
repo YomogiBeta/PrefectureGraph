@@ -44,18 +44,18 @@ export default {
 type Story = StoryObj<typeof Flex>
 
 const Template = (args: {
-  justify:
+  justify?:
     | 'flex-start'
     | 'flex-end'
     | 'center'
     | 'space-between'
     | 'space-around'
-  align: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
-  direction: 'row' | 'column' | 'row-reverse' | 'column-reverse'
-  wrap: 'nowrap' | 'wrap' | 'wrap-reverse'
-  gap: number
+  align?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
+  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+  gap?: number
   children: React.ReactNode
-  style: React.CSSProperties
+  style?: React.CSSProperties
 }) => <Flex {...args} />
 
 const TemplateChildren = () => (

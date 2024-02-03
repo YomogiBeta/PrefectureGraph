@@ -4,7 +4,7 @@ import RadioButton from './RadioButton'
 import RadioButtonGroup from './RadioButtonGroup'
 
 export default {
-  title: 'Components/Radio/RadioButton',
+  title: 'Components/RadioButton',
   component: RadioButton,
   argTypes: {
     label: { control: 'text' },
