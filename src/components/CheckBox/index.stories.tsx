@@ -7,6 +7,7 @@ export default {
   component: CheckBox,
   argTypes: {
     label: { control: 'text' },
+    value: { control: 'text' },
     checked: { control: 'boolean' },
     disabled: { control: 'boolean' },
     style: { control: 'object' }
@@ -17,10 +18,11 @@ type Story = StoryObj<typeof CheckBox>
 
 const Template = (args: {
   label: string
+  value?: string | number
   checked?: boolean
   disabled?: boolean
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
-  style: React.CSSProperties
+  style?: React.CSSProperties
 }) => <CheckBox {...args} />
 
 export const Default: Story = {

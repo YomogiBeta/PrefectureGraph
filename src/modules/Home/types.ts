@@ -1,0 +1,1 @@
+export type ChartType =  'totalPopulation'| 'youngerPopulation' | 'workingAgePopulation'| 'elderlyPopulation'

@@ -1,18 +1,18 @@
 import React, { memo } from 'react'
 
 type FlexProps = {
-  justify:
+  justify?:
     | 'flex-start'
     | 'flex-end'
     | 'center'
     | 'space-between'
     | 'space-around'
-  align: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
-  direction: 'row' | 'column' | 'row-reverse' | 'column-reverse'
-  wrap: 'nowrap' | 'wrap' | 'wrap-reverse'
-  gap: number
+  align?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
+  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+  gap?: number
   children: React.ReactNode
-  style: React.CSSProperties
+  style?: React.CSSProperties
 }
 
 const Flex: React.FC<FlexProps> = ({
@@ -32,7 +32,7 @@ const Flex: React.FC<FlexProps> = ({
         alignItems: align,
         flexDirection: direction,
         flexWrap: wrap,
-        gap: `${gap * 8}px`,
+        gap: `${(gap ?? 0) * 8}px`,
         ...style
       }}>
       {children}
