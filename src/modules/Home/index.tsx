@@ -18,7 +18,11 @@ const Home: React.FC = () => {
   }, [])
 
   return (
-    <Flex direction='column' gap={3}>
+    <Flex direction='column' gap={3} style={{ margin: '16px' }}>
+      <h2 style={{ textAlign: 'center', fontSize: '20px', fontWeight: 700 }}>
+        Title
+      </h2>
+      <hr style={{ flexGrow: 1, width: '100%' }} />
       <PrefecturesCheckField
         checkedPrefectures={prefectures}
         onAdd={handleAddPrefecture}
