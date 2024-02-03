@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "standard-with-typescript",
@@ -34,7 +35,8 @@
         "gatsby-browser.tsx",
         "gatsby-config.ts",
         "gatsby-ssr.tsx",
-        "postcss.config.cjs"
+        "postcss.config.cjs",
+        "jest.config.js"
     ],
     "settings": {
         "react": {
