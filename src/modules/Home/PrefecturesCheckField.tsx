@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { memo, useCallback } from 'react'
 import { usePrefectures } from '../../api'
 import Flex from '../../components/Flex'
 import CheckBox from '../../components/CheckBox'
@@ -57,4 +57,4 @@ const PrefecturesCheckField: React.FC<PrefecturesCheckFieldProps> = ({
   )
 }
 
-export default PrefecturesCheckField
+export default memo(PrefecturesCheckField)

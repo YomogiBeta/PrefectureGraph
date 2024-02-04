@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   return (
     <Flex direction='column' gap={3} style={{ margin: '16px' }}>
       <h2 style={{ textAlign: 'center', fontSize: '20px', fontWeight: 700 }}>
-        Title
+        都道府県別人口推移
       </h2>
       <hr style={{ flexGrow: 1, width: '100%' }} />
       <PrefecturesCheckField
