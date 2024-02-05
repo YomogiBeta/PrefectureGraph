@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { memo, useCallback } from 'react'
 import { usePrefectures } from '../../api'
 import Flex from '../../components/Flex'
 import CheckBox from '../../components/CheckBox'
@@ -29,19 +29,32 @@ const PrefecturesCheckField: React.FC<PrefecturesCheckFieldProps> = ({
   )
 
   return (
-    <Flex wrap='wrap'>
-      {prefectures?.map(prefecture => (
-        <CheckBox
-          key={prefecture.prefCode}
-          checked={checkedPrefectures?.includes(prefecture.prefCode)}
-          label={prefecture.prefName}
-          onChange={handleCheck}
-          style={{ minWidth: '96px' }}
-          value={prefecture.prefCode}
-        />
-      ))}
-    </Flex>
+    <>
+      <div>
+        <h3
+          style={{
+            padding: '4px',
+            border: '1px solid',
+            borderRadius: '8px',
+            width: 'fit-content'
+          }}>
+          都道府県
+        </h3>
+      </div>
+      <Flex wrap='wrap'>
+        {prefectures?.map(prefecture => (
+          <CheckBox
+            key={prefecture.prefCode}
+            checked={checkedPrefectures?.includes(prefecture.prefCode)}
+            label={prefecture.prefName}
+            onChange={handleCheck}
+            style={{ minWidth: '96px' }}
+            value={prefecture.prefCode}
+          />
+        ))}
+      </Flex>
+    </>
   )
 }
 
-export default PrefecturesCheckField
+export default memo(PrefecturesCheckField)

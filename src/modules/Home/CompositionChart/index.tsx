@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { memo, useCallback, useEffect, useState } from 'react'
 import ReactECharts, { type EChartsOption } from 'echarts-for-react'
-import { useCompositions, usePrefectures } from '../../api'
-import { type ChartType } from './types'
+import { useCompositions, usePrefectures } from '../../../api'
+import { type ChartType } from '../types'
+import NoContent from './NoContent'
 
 type CompositionChartProps = {
   prefectures: number[]
@@ -56,7 +57,7 @@ const CompositionChart: React.FC<CompositionChartProps> = ({
   const getChartOptions: EChartsOption = useCallback(
     () => ({
       title: {
-        text: `${compositios?.[0]?.data[getTypeIndex()].label} - 推移`
+        text: `${compositios?.[0]?.data[getTypeIndex()].label ?? '総人口'} - 推移`
       },
       tooltip: {
         trigger: 'axis'
@@ -79,7 +80,12 @@ const CompositionChart: React.FC<CompositionChartProps> = ({
     }),
     [compositios, currentCompositionsSeries, getTypeIndex]
   )
-  return <ReactECharts option={getChartOptions()} />
+
+  return prefectures.length > 0 ? (
+    <ReactECharts option={getChartOptions()} />
+  ) : (
+    <NoContent />
+  )
 }
 
-export default CompositionChart
+export default memo(CompositionChart)

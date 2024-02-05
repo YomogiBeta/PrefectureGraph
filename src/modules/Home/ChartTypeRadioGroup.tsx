@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import RadioButton from '../../components/Radio/RadioButton'
 import RadioButtonGroup from '../../components/Radio/RadioButtonGroup'
 import { type ChartType } from './types'
+import Flex from '../../components/Flex'
 
 type ChartTypeRadioGroupProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -13,14 +14,14 @@ const ChartTypeRadioGroup: React.FC<ChartTypeRadioGroupProps> = ({
 }) => {
   return (
     <RadioButtonGroup name='chartType' onChange={onChange} value={value}>
-      <div>
+      <Flex gap={1} wrap='wrap'>
         <RadioButton label='総人口' value='totalPopulation' />
         <RadioButton label='年少人口' value='youngerPopulation' />
         <RadioButton label='生産年齢人口' value='workingAgePopulation' />
         <RadioButton label='老年人口' value='elderlyPopulation' />
-      </div>
+      </Flex>
     </RadioButtonGroup>
   )
 }
 
-export default ChartTypeRadioGroup
+export default memo(ChartTypeRadioGroup)
